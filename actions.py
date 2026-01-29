@@ -18,20 +18,27 @@ class GradeMap:
 
 def score_to_grade(score: float) -> GradeMap:
     s = float(score)
-    if s >= 90:
+    if s >= 95:
         return GradeMap("A+", 4.0)
-    if 85 <= s <= 89:
-        return GradeMap("A-", 3.7)
-    if 80 <= s <= 84:
+    if 90 <= s <= 94:
+        return GradeMap("A", 3.7)
+    if 87 <= s <= 89:
         return GradeMap("B+", 3.3)
-    if 75 <= s <= 79:
+    if 83 <= s <= 86:
         return GradeMap("B", 3.0)
-    if 70 <= s <= 74:
-        return GradeMap("C-", 1.9)
-    if 65 <= s <= 69:
+    if 80 <= s <= 82:
+        return GradeMap("B", 2.7)
+    if 77 <= s <= 79:
+        return GradeMap("C+", 2.3)
+    if 73 <= s <= 76:
         return GradeMap("C", 2.0)
+    if 70 <= s <= 72:
+        return GradeMap("C", 1.7)
+    if 65 <= s <= 69:
+        return GradeMap("D", 1.3)
     if 60 <= s <= 64:
         return GradeMap("D", 1.0)
+    if 0 <= s  <= 59:
     return GradeMap("F", 0.0)
 
 
@@ -186,3 +193,4 @@ class ActionCalculateGpa(Action):
             SlotSet("current_score", None),
             SlotSet("courses", []),
         ]
+
